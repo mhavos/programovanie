@@ -28,7 +28,7 @@ entry.pack()
 b_add.pack()
 b_remove.pack()
 
-init_words = ["bro", "broccoli", "broth", "brother", "bruh", "win", "wind", "window", "world"]
+init_words = ["bro", "broccoli", "broth", "brother", "bruh", "widow", "win", "wind", "window", "word", "world"]
 for word in init_words:
     trie.push(word)
 
