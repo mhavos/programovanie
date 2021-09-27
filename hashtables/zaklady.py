@@ -34,7 +34,7 @@ class HashTable:
         for i in range(hash, hash + self.n):
             if self.data[i % self.n] == data:
                 return i % self.n
-        raise ValueError("HashTable does not contain the requested data")
+        raise KeyError("HashTable does not contain the requested data")
 
     def print(self):
         for d in self.data:
