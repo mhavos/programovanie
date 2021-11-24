@@ -11,6 +11,7 @@
     $nasiel = False;
     for ($i = 0; $i < count($users); $i++) {
       if ($users[$i]["user"] == $_POST["user"] and $users[$i]["pass"] == $_POST["pass"]) {
+        $_SESSION["user"] = $users[$i]["user"];
         $nasiel = True;
       }
     }

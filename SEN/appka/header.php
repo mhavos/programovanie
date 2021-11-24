@@ -1,3 +1,6 @@
+<?php
+  session_start()
+?>
 <head>
   <link href="styles.css" rel="stylesheet" type="text/css">
   <title><?php echo $_SERVER['PHP_SELF']; ?></title>
