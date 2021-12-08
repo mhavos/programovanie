@@ -7,8 +7,15 @@
 </head>
 <header>
   <h1> Moja web appka </h1>
-  <nav><list>
-    <a href="index.php">Homepage</a>
-    <a href="login.php">Login</a>
-  </list></nav>
+  <div>
+    <nav><list>
+      <a href="index.php">Homepage</a>
+      <a href="login.php">Login</a>
+    </list></nav>
+  </div>
+  <div>
+    <?php
+      if ( isset($_SESSION["user"]) ) echo "You are logged in as ". $_SESSION["user"]. ". <a href=\"logout.php\">Logout</a>";
+    ?>
+  </div>
 </header>

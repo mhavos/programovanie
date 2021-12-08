@@ -12,13 +12,18 @@ header, footer {
 nav {
   background-color: darkred;
   margin: 5px;
-  padding: 5px;
+  padding: 10px;
 }
 
 nav a {
+  background-color: black;
+  padding: 5px;
+}
+
+a {
   color: powderblue;
 }
 
-nav a:hover {
+a:hover {
   background-color: gray;
 }
