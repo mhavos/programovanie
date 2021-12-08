@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 03, 2021 at 03:01 PM
+-- Generation Time: Nov 24, 2021 at 04:22 PM
 -- Server version: 8.0.27-0ubuntu0.20.04.1
 -- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -52,6 +51,7 @@ INSERT INTO `preukazy` (`COP`, `RC`, `UID`, `Datum_vydania`, `Platnost`) VALUES
 
 CREATE TABLE `users` (
   `UID` int NOT NULL,
+  `username` varchar(200) NOT NULL,
   `Name` varchar(300) NOT NULL DEFAULT 'Jožko Mrkvička',
   `Password` varchar(200) NOT NULL,
   `Email` varchar(200) NOT NULL,
@@ -62,10 +62,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UID`, `Name`, `Password`, `Email`, `Privilege`) VALUES
-(1000, 'Janko Hraško', 'hrasko', 'hrasko@gjh.sk', 1),
-(1001, 'Jožko Mrkvička', '1234', 'mrkvicka@gjh.sk', 2),
-(1002, 'Geralt', 'ciri', 'geralt@rivia.sk', 3);
+INSERT INTO `users` (`UID`, `username`, `Name`, `Password`, `Email`, `Privilege`) VALUES
+(1000, 'hrasko', 'Janko Hraško', 'hrasko', 'hrasko@gjh.sk', 1),
+(1001, 'mrkvicka', 'Jožko Mrkvička', '1234', 'mrkvicka@gjh.sk', 2),
+(1002, 'geralt', 'Geralt', 'ciri', 'geralt@rivia.sk', 3);
 
 --
 -- Indexes for dumped tables
