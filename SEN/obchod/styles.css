@@ -1,0 +1,47 @@
+* {
+  font-family: "noto serif", serif
+}
+
+header, footer {
+  background-color: black;
+  color: white;
+  margin-top: 5px 0px;
+  padding: 5px;
+}
+
+nav {
+  background-color: darkred;
+  margin: 5px;
+  padding: 10px;
+}
+
+a {
+  color: powderblue;
+}
+
+a.dark {
+  color: blue;
+}
+
+nav a {
+  background-color: black;
+  padding: 5px;
+}
+
+a:hover {
+  background-color: gray;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid black;
+  margin: 5px;
+}
+
+th, td {
+  border: 1px solid black;
+}
+
+th {
+  font-weight: bold;
+}
