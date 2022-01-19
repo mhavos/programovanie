@@ -1,9 +1,14 @@
+DROP DATABASE `revajova.e`;
+CREATE DATABASE `revajova.e`;
+GRANT ALL ON `revajova.e`.* TO 'revajova.e'@'localhost';
+USE `revajova.e`;
+
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2022 at 07:14 PM
+-- Generation Time: Jan 19, 2022 at 01:55 PM
 -- Server version: 8.0.27-0ubuntu0.20.04.1
 -- PHP Version: 7.4.3
 
@@ -76,7 +81,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`pro_id`, `pro_name`, `pro_price`) VALUES
-(1, 'ice cream sandwich', 2.99);
+(1, 'ice cream sandwich', 2.99),
+(2, 'donut', 4.99),
+(3, 'a singular slice of pie', 3.55),
+(4, 'a spoonful of cinnamon', 1.79),
+(5, 'cheese flavored bubble gum', 15.99);
 
 -- --------------------------------------------------------
 

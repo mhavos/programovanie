@@ -1,5 +1,5 @@
 <?php
-  session_start()
+session_start()
 ?>
 <head>
   <link href="styles.css" rel="stylesheet" type="text/css">
@@ -11,11 +11,16 @@
     <nav><list>
       <a href="index.php">Homepage</a>
       <a href="login.php">Login</a>
+      <?php
+      if ( isset($_SESSION["user"]) ) {
+        echo '<a href="cart.php">Cart</a>';
+      }
+      ?>
     </list></nav>
   </div>
   <div>
     <?php
-      if ( isset($_SESSION["user"]) ) echo "You are logged in as ". $_SESSION["user"]. ". <a href=\"logout.php\">Logout</a>";
+    if ( isset($_SESSION["user"]) ) echo "You are logged in as ". $_SESSION["user"]. ". <a href=\"logout.php\">Logout</a>";
     ?>
   </div>
 </header>

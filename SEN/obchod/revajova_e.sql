@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `middle_man` (
-  `mid_id` int NOT NULL,
+  `mid_id` int NOT NULL AUTO_INCREMENT,
   `pro_id` int NOT NULL,
   `ord_id` int NOT NULL,
   `amount` int NOT NULL

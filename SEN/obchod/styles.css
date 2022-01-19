@@ -9,6 +9,13 @@ header, footer {
   padding: 5px;
 }
 
+div.product {
+  background-color: red;
+  border-style: solid;
+  border-width: 5px;
+  border-color: darkred;
+}
+
 nav {
   background-color: darkred;
   margin: 5px;

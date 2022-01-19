@@ -5,10 +5,20 @@
   if (isset($_POST["submit"])) {
     if ($_POST["pass1"] == $_POST["pass2"]) {
       $connection = connect("localhost", "revajova.e", "revajova.e");
-      $sql = "INSERT INTO `users` (`use_id`, `username`, `password`) VALUES (2, '".$_POST["user"]."', '".$_POST["pass"]."');";
+
+      for ($use_id = 0; $id < 1000000000; $id++) {
+        if ($connection->query("SELECT * FROM `users` WHERE `use_id`=".$id.";")->num_rows == 0) {
+          break;
+        }
+      }
+      $ord_id = 1000*$use_id + 1;
+
+      $sql1 = "INSERT INTO `users` (`use_id`, `username`, `password`) VALUES ($use_id, '".$_POST["user"]."', '".$_POST["pass1"]."');";
+      $sql2 = "INSERT INTO `orders` (`ord_id`, `use_id`) VALUES ('".$use_id."', '".$ord_id."');";
+      $sql = $sql1 . " " . $sql2;
       $result = $connection->query ($sql);
-      $_SESSION["user"] = $row["username"];
-      $_SESSION["UID"] = $row["UID"];
+      $_SESSION["user"] = $_POST["user"];
+      $_SESSION["UID"] = $_POST[$use_id];
       header ("location: index.php");
     }
   }

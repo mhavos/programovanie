@@ -4,8 +4,18 @@
     require ("functions.php");
 
     $connection = connect("localhost", "revajova.e", "revajova.e");
-    $sql = "SELECT * FROM `users` WHERE 1;";
-    $result = $connection->query ($sql);
+
+    if (isset($_POST["submit"])) {
+      $sql = $_POST["sql"];
+      if ($sql == "") {
+        $sql = "SELECT * FROM `users`;";
+      }
+      $result = $connection->query ($sql);
+
+    } else {
+      $sql = "SELECT * FROM `users`;";
+      $result = $connection->query ($sql);
+    }
 
     if ($result->num_rows > 0) {
       echo "<tr> <th>use_id</th> <th>username</th> <th>password</th> </tr>";
@@ -17,3 +27,8 @@
     }
   ?>
 </table>
+
+<form method="post">
+  <p> Query:<br> <input type="text" name="sql" placeholder="SELECT * FROM users;" style="width:800px;"> </p>
+  <p> <input type="submit" name="submit" value="Submit"> </p>
+</form>
