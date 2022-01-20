@@ -6,14 +6,15 @@ session_start()
   <title><?php echo $_SERVER['PHP_SELF']; ?></title>
 </head>
 <header>
-  <h1> something something OBCHOD </h1>
+  <h1> Magic Candy Store </h1>
   <div>
     <nav><list>
       <a href="index.php">Homepage</a>
       <a href="login.php">Login</a>
       <?php
       if ( isset($_SESSION["user"]) ) {
-        echo '<a href="cart.php">Cart</a>';
+        echo '<a href="cart.php">Cart</a> ';
+        echo '<a href="archive.php">Archive</a>';
       }
       ?>
     </list></nav>

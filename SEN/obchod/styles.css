@@ -12,15 +12,31 @@ header, footer {
 div.product {
   border-style: solid;
   border-width: 5px;
-  border-color: darkred;
-  width: 20%;
+  border-color: darkseagreen;
+  width: 15%;
   float: left;
   margin: 5px;
   padding: 5px;
 }
 
+div.part {
+  border-style: solid;
+  border-width: 2px;
+  border-color: darkseagreen;
+  margin: 5px;
+  padding: 5px;
+}
+
+image.part {
+  float: left;
+}
+
+p.part {
+  float: left;
+}
+
 nav {
-  background-color: darkred;
+  background-color: darkseagreen;
   margin: 5px;
   padding: 10px;
 }
