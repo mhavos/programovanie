@@ -4,13 +4,13 @@
 
   if (isset($_POST["submit"])) {
     $connection = connect("localhost", "revajova.e", "revajova.e");
-    $sql = "SELECT * FROM `users` WHERE `username`='".$_POST["user"]."' AND `password`='".$_POST["pass"]."';";
+    $sql = "SELECT * FROM `users` WHERE `username`='$_POST[user]' AND `password`='$_POST[pass]';";
     $result = $connection->query ($sql);
 
     if ($result->num_rows > 0) {
       $row = $result->fetch_assoc();
       $_SESSION["user"] = $row["username"];
-      $_SESSION["UID"] = $row["UID"];
+      $_SESSION["UID"] = $row["use_id"];
       header ("location: index.php");
     } else {
       echo "Username or password is incorrect.";

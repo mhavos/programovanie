@@ -10,10 +10,13 @@ header, footer {
 }
 
 div.product {
-  background-color: red;
   border-style: solid;
   border-width: 5px;
   border-color: darkred;
+  width: 20%;
+  float: left;
+  margin: 5px;
+  padding: 5px;
 }
 
 nav {

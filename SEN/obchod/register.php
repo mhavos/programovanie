@@ -13,12 +13,12 @@
       }
       $ord_id = 1000*$use_id + 1;
 
-      $sql1 = "INSERT INTO `users` (`use_id`, `username`, `password`) VALUES ($use_id, '".$_POST["user"]."', '".$_POST["pass1"]."');";
-      $sql2 = "INSERT INTO `orders` (`ord_id`, `use_id`) VALUES ('".$use_id."', '".$ord_id."');";
-      $sql = $sql1 . " " . $sql2;
-      $result = $connection->query ($sql);
+      $sql1 = "INSERT INTO `users` (`use_id`, `username`, `password`) VALUES ($use_id, '$_POST[user]', '$_POST[pass1]');";
+      $sql2 = "INSERT INTO `orders` (`ord_id`, `use_id`) VALUES ($use_id, $ord_id);";
+      $connection->query ($sql1);
+      $connection->query ($sql2);
       $_SESSION["user"] = $_POST["user"];
-      $_SESSION["UID"] = $_POST[$use_id];
+      $_SESSION["UID"] = $_POST["pass1"];
       header ("location: index.php");
     }
   }
