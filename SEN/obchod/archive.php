@@ -21,7 +21,7 @@ if ( isset($_SESSION["user"]) ) {
       while ($row = $result->fetch_assoc()) {
         $product = $connection->query("SELECT * FROM `products` WHERE `pro_id`=$row[pro_id];")->fetch_assoc();
         echo "<div class=part>";
-        $total = $product[pro_price] * $row[amount];
+        $total = $product["pro_price"] * $row["amount"];
         $big_total += $total;
         echo "<p> $product[pro_name] <br> $product[pro_price] € x $row[amount] = <strong>$total €</strong> </p></div>";
       }

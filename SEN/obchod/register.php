@@ -18,7 +18,7 @@
       $connection->query ($sql1);
       $connection->query ($sql2);
       $_SESSION["user"] = $_POST["user"];
-      $_SESSION["UID"] = $_POST["pass1"];
+      $_SESSION["UID"] = $use_id;
       header ("location: index.php");
     }
   }
