@@ -1,4 +1,4 @@
-class Trie:
+class PrefixTree:
     class Node:
         def __init__(self, key, parent=None, children=None, is_end=False):
             if children == None:
@@ -37,7 +37,7 @@ class Trie:
             return self.width
 
     def __init__(self):
-        self.root = Trie.Node(None)
+        self.root = PrefixTree.Node(None)
 
     def push(self, word):
         current = self.root
@@ -45,7 +45,7 @@ class Trie:
             if letter in current.children:
                 current = current.children[letter]
             else:
-                new = Trie.Node(letter, parent = current)
+                new = PrefixTree.Node(letter, parent = current)
                 current.children[letter] = new
                 current = new
         current.is_end = True
@@ -70,7 +70,7 @@ class Trie:
             raise ValueError(word)
         current.is_end = False
         while current is not self.root:
-            if len(current.children):
+            if len(current.children) or current.is_end:
                 return
             key = current.key
             current = current.parent
