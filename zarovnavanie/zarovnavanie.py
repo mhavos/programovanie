@@ -1,4 +1,4 @@
-def vypis(meno_suboru: str, sirka: int, zarovnat: bool = True, slovo: str = "") -> type(None):
+def vypis(meno_suboru: str, sirka: int, zarovnat: bool = True, slovo: str = ""):
     with open(meno_suboru, "r") as file:
 
         # spracuj text do odsekov:
@@ -47,4 +47,4 @@ def vypis(meno_suboru: str, sirka: int, zarovnat: bool = True, slovo: str = "") 
 
 for args in ((20,), (60,), (45, False), (45, True, "kvety")):
     print(f"\n\n----   vypis('subor1.txt', {', '.join(map(repr, args))})   ----\n")
-    vypis("subor1.txt", *args)
+    vypis("zarovnavanie/subor1.txt", *args)
